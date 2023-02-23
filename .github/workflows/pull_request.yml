@@ -1,13 +1,14 @@
-name: Notification de fermeture de PR
+name: pull request
 
 on:
   pull_request:
     types: [closed]
 
 jobs:
-  notify_merged_pr:
-    if: github.event.pull_request.merged == true
+
+  pull:
     runs-on: ubuntu-latest
     steps:
-    - name: Afficher un message
-      run: echo "La PR a été mergée !"
+      - name: Afficher un message
+        if: github.event.pull_request.merged == true
+        run: echo "La PR a été mergée !"
