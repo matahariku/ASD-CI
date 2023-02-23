@@ -1,4 +1,4 @@
-name: créée_issue
+name: cree_issue
 on:
   issues:
     types: [opened]
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: send message
-        run: echo "Issue est créée"
+        run: echo "Issue cree"
 
 
 
