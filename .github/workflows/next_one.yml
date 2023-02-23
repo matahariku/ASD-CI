@@ -1,0 +1,14 @@
+name: Workflow suivant
+
+on:
+  workflow_run:
+    workflows: ["Notification de fermeture de PR"]
+    types:
+      - completed
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Afficher un message
+      run: echo "Le workflow précédent est terminé !"
