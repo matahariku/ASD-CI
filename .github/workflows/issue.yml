@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  créée_issue:
+  cree_issue:
     runs-on: ubuntu-latest
     steps:
       - name: send message
