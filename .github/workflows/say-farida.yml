@@ -1,6 +1,6 @@
 name: Hello Farida !
 
-on: workflow-dispatch
+on: workflow_dispatch
 
 env:
   NAME: Farida
