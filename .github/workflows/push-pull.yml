@@ -1,4 +1,4 @@
-name: test request pull ou push ?
+name: pull_push
 
 on: [push, pull_request]
 
@@ -10,12 +10,12 @@ jobs:
   
   push:
     runs-on: ubuntu latest 
-    step:
+    steps:
       - name: Push
         run: echo "$PUSH" 
   pull_request:
     runs-on: ubuntu-latest
-        if: ${{ github.event_name == 'pull_request' }}
-        steps:
+    steps:  
       - name: Pull Request
-        run: echo "PR" 
+        if: ${{ github.event_name == 'pull_request' }}     
+        run: echo "$PR"
