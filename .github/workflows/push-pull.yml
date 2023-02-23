@@ -1,0 +1,24 @@
+name: test request !
+
+on: workflows
+
+env:
+  NAME: push ou pull
+
+jobs:
+  choisir_request-push:
+    run-on: ubuntu-latest
+    step:
+      - name: "choisir request Push"
+        if: ${{env.NAME != 'push'}}
+        run: echo "hello toi $NAME ! tu n'est pas le push!"
+      - name: "trouver le request push"
+        if: ${{env.NAME == 'push'}}
+        run: echo "aha toi $NAME ! c'est un push request !!" 
+
+      - name: "choisir request Pull"
+        if: ${{env.NAME != 'pull'}}
+        run: echo "hello toi $NAME ! tu n'est pas le pull!"
+      - name: "trouver le request pull"
+        if: ${{env.NAME == 'pull'}}
+        run: echo "aha toi $NAME ! c'est un pull request !!" 
