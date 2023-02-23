@@ -1,14 +1,11 @@
 name: Hello Farida !
 
-on: workflow dispath
+on: workflow-dispatch
 
 env:
   NAME: Farida
 
 jobs:
-  hello-world:
-    run-on: ubuntu-latest
-    steps: 
 
   echo:
     runs-on: ubuntu-latest
