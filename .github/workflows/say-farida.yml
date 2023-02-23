@@ -1,0 +1,21 @@
+name: Hello Farida !
+
+on: workflow dispath
+
+env:
+  NAME: Farida
+
+jobs:
+  hello-world:
+    run-on: ubuntu-latest
+    steps: 
+
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Dit bonjour"
+        if: ${{env.Name != 'Farida'}}
+        run: echo "Salut $NAME ! Ou est Farida?"
+      - name: "Coucou Farida"
+        if: ${{env.NAME == 'Farida'}} 
+        run: echo "Salut $NAME ! Content de te voir, comment tu vas ? lov lov" 
