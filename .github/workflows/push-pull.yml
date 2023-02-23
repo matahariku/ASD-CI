@@ -1,24 +1,21 @@
-name: test request !
+name: test request pull ou push ?
 
-on: workflows
+on: [push, pull_request]
 
 env:
-  NAME: push ou pull
+  PUSH: c'est un push !
+  PR: C'est un PR !
 
 jobs:
-  choisir_request-push:
-    run-on: ubuntu-latest
+  
+  push:
+    runs-on: ubuntu latest 
     step:
-      - name: "choisir request Push"
-        if: ${{env.NAME != 'push'}}
-        run: echo "hello toi $NAME ! tu n'est pas le push!"
-      - name: "trouver le request push"
-        if: ${{env.NAME == 'push'}}
-        run: echo "aha toi $NAME ! c'est un push request !!" 
-
-      - name: "choisir request Pull"
-        if: ${{env.NAME != 'pull'}}
-        run: echo "hello toi $NAME ! tu n'est pas le pull!"
-      - name: "trouver le request pull"
-        if: ${{env.NAME == 'pull'}}
-        run: echo "aha toi $NAME ! c'est un pull request !!" 
+      - name: Push
+        run: echo "$PUSH" 
+  pull_request:
+    runs-on: ubuntu-latest
+        if: ${{ github.event_name == 'pull_request' }}
+        steps:
+      - name: Pull Request
+        run: echo "PR" 
