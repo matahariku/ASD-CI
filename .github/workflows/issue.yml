@@ -1,5 +1,16 @@
+name: créée_issue
 on:
   issues:
     types: [opened]
-    echo "Issue créée"
+
+jobs:
+  créée_issue:
+    runs-on: ubuntu-latest
+    steps:
+      name: send message
+      run: echo "Issue est créée"
+
+
+
+
     
