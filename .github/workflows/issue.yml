@@ -4,11 +4,12 @@ on:
     types: [opened]
 
 jobs:
+
   créée_issue:
     runs-on: ubuntu-latest
     steps:
-      name: send message
-      run: echo "Issue est créée"
+      - name: send message
+        run: echo "Issue est créée"
 
 
 
