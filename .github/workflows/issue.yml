@@ -1,0 +1,4 @@
+on:
+  issues:
+    echo "issue créé"
+    run echo
