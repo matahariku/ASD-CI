@@ -1,4 +1,3 @@
 on:
   issues:
-    echo "issue créé"
-    run echo
+    types: [opened]
