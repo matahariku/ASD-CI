@@ -1,19 +1,13 @@
-# Nom du pipeline
-name: Fruit et noms
+name: Fruit_noms
 
 on: workflow_dispatch
-# Liste des jobs
+
 jobs:
-  # Nom du job
   run_script:
-    # Type du runner (ici, un runner "shell")
     runs-on: ubuntu-latest
-    # Steps à exécuter
     steps:
-      # Récupération du script Bash
       - name: Checkout script
         uses: actions/checkout@v2
-      # Exécution du script Bash
       - name: Run script
         run: |
           set -e
