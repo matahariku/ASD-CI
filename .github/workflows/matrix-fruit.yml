@@ -1,0 +1,22 @@
+name: Fruit_noms
+
+on: workflow_dispatch
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout script
+        uses: actions/checkout@v2
+      - name: Run script
+        run: |
+          set -e
+          fruits=("pomme" "banane" "orange" "kiwi")
+          names=("Jean" "Sophie" "Emma")
+          for fruit in "${fruits[@]}"
+          do
+            for name in "${names[@]}"
+            do
+              echo "${name} mange une ${fruit}, et il/elle adore ça !"
+            done
+          done
