@@ -1,0 +1,3 @@
+"scripts": {
+  "validate-commits": "commitlint --from=HEAD~1"
+}
